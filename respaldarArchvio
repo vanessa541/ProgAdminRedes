@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+archivo="$1"
+dir_destino="$2"
+fecha=$(date +%Y-%m-%d)
+solo_nombre=$(basename "$archivo")
+new_archivo=$solo_nombre-$fecha
+contenido=$(cat "$archivo")
+cp $archivo $dir_destino/$new_archivo
+echo -e "$USER \n$contenido"> $new_archivo
+echo Archivo respaldado: $new_archivo
+
+
+#ejemplo2
+#!/usr/bin/env bash
+#$1 variable de solo lectura
+archivo="$1"
+dir_destino="$2"
+#$()expandir salida de un comando
+#"" comillas siempre para manipular variables 
+fecha=$(date +%Y-%m-%d)
+solo_nombre=$(basename "$archivo")
+new_archivo="$solo_nombre$fecha"
+whoami>"$dir_destino/$new_archivo"
+cat "$archivo">>"$dir_destino/$new_archivo"
+echo Archivo respaldado: $new_archivo
