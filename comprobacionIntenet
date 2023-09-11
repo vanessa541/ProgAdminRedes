@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+if curl https://www.google.com &> /dev/null ; then
+	echo internet
+else 
+	echo no hay internet
+fi	
