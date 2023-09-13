@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#parametros entre comillas para evitar problemas con espacios
+archivo1="$1"
+archivo2="$2"
+dir_salida="$3"
+
+#redirecciones
+cat "$archivo1">"$dir_salida"
+cat "$archivo2">>"$dir_salida"
+#2da forma
+#cat "$archivo1" "$archivo2">"$dir_salida"
