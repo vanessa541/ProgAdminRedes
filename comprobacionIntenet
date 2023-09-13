@@ -4,3 +4,5 @@ if curl https://www.google.com &> /dev/null ; then
 else 
 	echo no hay internet
 fi	
+#inline
+#curl https://www.google.com &> /dev/null && echo internet||echo no hay intenet
