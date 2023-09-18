@@ -1,0 +1,13 @@
+#!/usr/bin/ 
+#crear usuario tomando los datos d un archivo de texto
+archivo=$1
+test -f "$1" || { echo "se espera un archivo como primer parametro" ;exit 1; }
+
+while read linea; do 
+
+	user=$(echo "$linea"|cut -d: -f 1) 
+	shell=$(echo  "$linea"|cut -d: -f 2) 
+	direc=$(echo "$linea"|cut -d: -f 3) ;
+	useradd $user -s $shell -d $direc 
+done<"$archivo"
+#echo "user:shell:home" | cut -d: -f 1
