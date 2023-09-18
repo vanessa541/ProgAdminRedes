@@ -1,0 +1,16 @@
+#!/usr/bin 
+
+#recibe un directorio e imprime cuantos subdirectorios hay en ese directorio,
+#validar parametros usar for e if
+dir_padre=$1
+contador=0
+
+test -d "$1"|| { echo "El primer parametro no es directorio" ;exit 1; }
+
+for archivo in $(ls "$dir_padre");do
+	 test -d "$dir_padre/$archivo" && let contador=contador+1
+#	if test -d "$dir_padre/$archivo"; then
+	#	 let contador=contador+1 
+	#fi	
+done	
+echo "Total de subdirectorios: $contador"
